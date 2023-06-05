@@ -10,13 +10,13 @@ import test.example.test_project.repository.UserRepository;
 
 import java.util.List;
 
-@CrossOrigin("*")
 @RestController
+@RequestMapping("/user")
 public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    @RequestMapping(value = "/user")
+    @RequestMapping(value = "/getList")
     public List<User> getUserList() {
         return userRepository.findAll();
     }
